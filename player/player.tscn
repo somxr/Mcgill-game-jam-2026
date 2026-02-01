@@ -370,7 +370,7 @@ script = ExtResource("6_boad6")
 metadata/_custom_type_script = "uid://dmi4fnrj0di4h"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=799311707]
-transform = Transform3D(1, 0, 0, 0, 0.89538574, 0.4452914, 0, -0.4452914, 0.89538574, 0, 0.37966368, 0.6869726)
+transform = Transform3D(1, 0, 0, 0, 0.94537085, 0.32599697, 0, -0.32599697, 0.94537085, 0, 0.30194166, 0.6053884)
 fov = 50.0
 size = 12.154
 

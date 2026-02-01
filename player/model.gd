@@ -38,6 +38,11 @@ func _ready():
 
 
 func update(input: InputPackage, delta: float):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+		
 	var next_state = current_state.check_transition(input)
 	if next_state != "unchanged":
 		switch_state(next_state)
