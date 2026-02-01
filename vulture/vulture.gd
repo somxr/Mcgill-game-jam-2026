@@ -66,7 +66,9 @@ func _on_player_safety_changed(is_safe: bool):
 func kill_player():
 	print("emitting dead signal")
 	player_died.emit()
+	visible = false
 	killed_player = true
+	
 	
 	
 	#print("player died at position: " , player.global_position)
