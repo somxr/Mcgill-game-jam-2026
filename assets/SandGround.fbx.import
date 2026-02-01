@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://muvtniv11qfd"
-path="res://.godot/imported/clam.fbx-f4dbd9eac8c0394e04a8d021a9573ba8.scn"
+uid="uid://ywkf523hfba7"
+path="res://.godot/imported/SandGround.fbx-3e19fc63a460c3f8b58a6581949b1baa.scn"
 
 [deps]
 
-source_file="res://assets/props/clam.fbx"
-dest_files=["res://.godot/imported/clam.fbx-f4dbd9eac8c0394e04a8d021a9573ba8.scn"]
+source_file="res://assets/SandGround.fbx"
+dest_files=["res://.godot/imported/SandGround.fbx-3e19fc63a460c3f8b58a6581949b1baa.scn"]
 
 [params]
 

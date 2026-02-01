@@ -340,5 +340,5 @@ texture = ExtResource("2_wcero")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772792835]
 libraries/ = SubResource("AnimationLibrary_xtwv2")
 autoplay = &"flying-in"
-playback_default_blend_time = 0.5
-blend_times = [&"RESET", &"danger-coming", 0.2, &"RESET", &"flying-away", 0.2, &"RESET", &"flying-in", 0.2, &"RESET", &"no-danger", 0.2, &"RESET", &"oscillating-shadow", 0.5, &"oscillating-shadow", &"RESET", 0.2, &"oscillating-shadow", &"danger-coming", 0.2, &"oscillating-shadow", &"flying-away", 0.2, &"oscillating-shadow", &"flying-in", 0.2, &"oscillating-shadow", &"no-danger", 0.2, &"oscillating-shadow", &"oscillating-shadow", 0.2]
+playback_default_blend_time = 0.2
+blend_times = [&"RESET", &"danger-coming", 0.2, &"RESET", &"flying-away", 0.2, &"RESET", &"flying-in", 0.2, &"RESET", &"no-danger", 0.2, &"RESET", &"oscillating-shadow", 0.5, &"oscillating-shadow", &"danger-coming", 0.2, &"oscillating-shadow", &"flying-away", 0.2, &"oscillating-shadow", &"flying-in", 0.2, &"oscillating-shadow", &"no-danger", 0.2, &"oscillating-shadow", &"oscillating-shadow", 0.2]

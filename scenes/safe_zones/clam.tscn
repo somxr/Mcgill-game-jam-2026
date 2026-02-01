@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccf4mki2cn6jk"]
+
+[ext_resource type="PackedScene" uid="uid://muvtniv11qfd" path="res://assets/props/clam.fbx" id="1_wabcl"]
+[ext_resource type="PackedScene" uid="uid://0lh25ak1xlwj" path="res://safe_zone/safe_zone.tscn" id="2_h7ybs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6qr1i"]
+size = Vector3(1.4082031, 1.3650208, 2.503418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t5mg5"]
+size = Vector3(0.9408264, 1.3641968, 2.5037842)
+
+[node name="Clam" type="StaticBody3D" unique_id=446028002]
+
+[node name="clam" parent="." unique_id=1825703797 instance=ExtResource("1_wabcl")]
+transform = Transform3D(0.54103315, 0.72832847, 0.4205007, 0.8410013, -0.46854848, -0.2705166, -1.4901161e-08, 0.50000006, -0.8660254, -0.42530853, 0.98647964, -0.7873224)
+
+[node name="SafeZone" parent="." unique_id=850130187 instance=ExtResource("2_h7ybs")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=1108374526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1237793, 0.2472992, -0.13891602)
+shape = SubResource("BoxShape3D_6qr1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1836870060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0242157, 0.25393677, -0.097717285)
+shape = SubResource("BoxShape3D_t5mg5")

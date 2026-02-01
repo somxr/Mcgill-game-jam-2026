@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://chlwrvf141j3l"]
+
+[ext_resource type="PackedScene" uid="uid://c8mtcouf5r3wh" path="res://assets/props/flipflop.fbx" id="1_mhx81"]
+[ext_resource type="PackedScene" uid="uid://0lh25ak1xlwj" path="res://safe_zone/safe_zone.tscn" id="2_a6mx8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0m4is"]
+size = Vector3(3.5976257, 1.1079102, 1.9788818)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6mx8"]
+size = Vector3(1.0979614, 1.1242676, 1.3514404)
+
+[node name="flipflop" type="StaticBody3D" unique_id=123533331]
+
+[node name="flipflop" parent="." unique_id=356698305 instance=ExtResource("1_mhx81")]
+transform = Transform3D(-2.7756732e-08, 0, 0.635, 0, 0.635, 0, -0.635, 0, -2.7756732e-08, 0, 0, 0)
+
+[node name="SafeZone" parent="." unique_id=850130187 instance=ExtResource("2_a6mx8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=22608562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12553406, 0.5114746, -0.03643799)
+shape = SubResource("BoxShape3D_0m4is")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1719721244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6823425, 0.5311279, 0.07965088)
+shape = SubResource("BoxShape3D_a6mx8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=227109352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0495064, 0.5311279, 0.07965088)
+shape = SubResource("BoxShape3D_a6mx8")
