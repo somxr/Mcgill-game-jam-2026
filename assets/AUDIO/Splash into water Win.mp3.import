@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8ey6rniymo8g"
+path="res://.godot/imported/Splash into water Win.mp3-08cac70ecb4a083fba09f4e34474d959.mp3str"
+
+[deps]
+
+source_file="res://assets/AUDIO/Splash into water Win.mp3"
+dest_files=["res://.godot/imported/Splash into water Win.mp3-08cac70ecb4a083fba09f4e34474d959.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

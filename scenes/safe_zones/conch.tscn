@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0lh25ak1xlwj" path="res://safe_zone/safe_zone.tscn" id="2_pqn41"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxu8c"]
-size = Vector3(1.7810059, 1.4985657, 2.0722656)
+size = Vector3(1.7069092, 1.4985657, 2.0722656)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4odw6"]
 size = Vector3(1.9125977, 1.5341797, 2.0494995)
@@ -15,7 +15,7 @@ size = Vector3(1.9125977, 1.5341797, 2.0494995)
 transform = Transform3D(-0.28512427, 0.7854809, 0.1809669, -0.7130271, -0.33530185, 0.33194894, 0.37592757, -0.040219434, 0.7668677, -1.0510275, 1.2145984, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1643689896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99645996, 0.7752533, -0.13964844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0335083, 0.7752533, -0.13964844)
 shape = SubResource("BoxShape3D_gxu8c")
 
 [node name="SafeZone" parent="." unique_id=850130187 instance=ExtResource("2_pqn41")]

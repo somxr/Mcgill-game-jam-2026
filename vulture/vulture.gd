@@ -1,5 +1,7 @@
 extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var vulture_noise_audio_stream_player_3d: AudioStreamPlayer3D = $VultureNoiseAudioStreamPlayer3D
+@onready var wings_sound: AudioStreamPlayer3D = $WingsSound
 
 var player_model: PlayerModel 
 
@@ -38,10 +40,14 @@ func _process(delta: float) -> void:
 		kill_timer -= delta
 		if kill_timer <= 0.0:
 			kill_player()
-		if kill_timer < warning_time:
+		if kill_timer < warning_time and animation_player.current_animation != "danger-coming":
 			animation_player.play("danger-coming")
+			vulture_noise_audio_stream_player_3d.play()
+			print("danger coming and sound should play")
+
 		if !animation_player.is_playing():
 			animation_player.play("oscillating-shadow")
+			wings_sound.play()
 			
 	follow_player(delta)
 	

@@ -1,6 +1,7 @@
 extends State
 class_name Walk
 @onready var animation_player: AnimationPlayer = $"../../visual/turtlev3/AnimationPlayer"
+@onready var walk_sound: AudioStreamPlayer3D = $"../../WalkSound"
 
 ## Top speed character moves forward
 @export var TOP_SPEED = 3.0 # meters per second
@@ -51,9 +52,10 @@ func update(input: InputPackage, delta: float):
 		
 func enter_state():
 	animation_player.play("turtle-local/walk")
+	walk_sound.play()
 func exit_state():
-	#is_gliding = false
-	pass
+	walk_sound.stop()
+
 
 
 func calculate_velocity_from_input(input: InputPackage, delta: float):
