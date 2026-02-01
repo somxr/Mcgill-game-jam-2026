@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dlb1ybp0auvbb"]
+
+[ext_resource type="PackedScene" uid="uid://co04ojtran6lv" path="res://player/player.tscn" id="1_v3uhd"]
+[ext_resource type="Texture2D" uid="uid://de2j3qb7jdvx8" path="res://assets/kenney_prototype/Green/texture_09.png" id="2_ufxs0"]
+[ext_resource type="PackedScene" uid="uid://dxxjpw5h7txcv" path="res://safe_zone/flip_flop.tscn" id="4_8ra5a"]
+[ext_resource type="PackedScene" uid="uid://o6vc7l36evct" path="res://win_area/win_area.tscn" id="5_8ra5a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ufxs0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6we3w"]
+sky_material = SubResource("ProceduralSkyMaterial_ufxs0")
+
+[sub_resource type="Environment" id="Environment_qmak7"]
+background_mode = 2
+sky = SubResource("Sky_6we3w")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6we3w"]
+albedo_texture = ExtResource("2_ufxs0")
+uv1_scale = Vector3(0.92, 0.92, 0.92)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq26l"]
+
+[node name="MainLevel" type="Node3D" unique_id=572399830]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=796269454]
+environment = SubResource("Environment_qmak7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=368817828]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1089570262 instance=ExtResource("1_v3uhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6162171, 0, 1.0751204)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1611264790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(27.224854, 1, 25.166016)
+material = SubResource("StandardMaterial3D_6we3w")
+
+[node name="FlipFlop" parent="." unique_id=901534753 instance=ExtResource("4_8ra5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="WinArea" parent="." unique_id=1031120400 instance=ExtResource("5_8ra5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2963929, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea" unique_id=1164651078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5361345, 0, -0.13893855)
+shape = SubResource("BoxShape3D_bq26l")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1943103736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2885602)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -0.9557605, -0.03782296, -0.08021438, 0.3428671, 1, 0)

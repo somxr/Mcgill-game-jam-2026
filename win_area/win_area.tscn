@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://o6vc7l36evct"]
+
+[ext_resource type="Script" uid="uid://bj8i8fv5u7xbl" path="res://win_area/win_area.gd" id="1_hk5yl"]
+
+[node name="WinArea" type="Area3D" unique_id=1031120400]
+script = ExtResource("1_hk5yl")

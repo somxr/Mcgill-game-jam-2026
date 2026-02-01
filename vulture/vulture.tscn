@@ -1,0 +1,342 @@
+[gd_scene format=3 uid="uid://ca2r2mjs2vrry"]
+
+[ext_resource type="Script" uid="uid://ufc855yj5xs2" path="res://vulture/vulture.gd" id="1_cy26h"]
+[ext_resource type="Texture2D" uid="uid://dvltsq0iirhvx" path="res://assets/vulture/vulture_shadow.png" id="2_wcero"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cy26h"]
+radius = 0.06
+height = 0.165
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcero"]
+albedo_color = Color(0.61977375, 0.1843414, 0.2932378, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_i0prp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtwv2"]
+transparency = 1
+albedo_texture = ExtResource("2_wcero")
+
+[sub_resource type="Animation" id="Animation_wcero"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.57658255, -0.25, 0, 0.25, 0, 0, -0.00016666666, 0.0960971, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.00016666666, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.00016666666, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/ShadowSprite3D:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/ShadowSprite3D:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/ShadowSprite3D:scale:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xtwv2"]
+resource_name = "danger-coming"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.8333334, 0.0960971, 0, -0.8333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.8333334, 0, 0, -0.8333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.8333334, 0, 0, -0.8333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/ShadowSprite3D:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0, 0.555, -0.3156985, -0.048333343, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/ShadowSprite3D:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0, 0.555, -0.3156985, -0.048333343, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/ShadowSprite3D:scale:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.265, -0.25, 0, 0.25, 0, 0.555, -0.3156985, -0.048333343, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="Animation" id="Animation_3w2fa"]
+resource_name = "flying-away"
+length = 6.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 6.365, -1, -1.0608333, 0, 0),
+"times": PackedFloat32Array(0, 6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.93, -1, 0.155, 0, 0),
+"times": PackedFloat32Array(0, 6)
+}
+
+[sub_resource type="Animation" id="Animation_osa2p"]
+resource_name = "flying-in"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(6.365, 0, 0, 1, -1.0608333, 0, -1, 1.0608333, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 1, 0, 0, -1, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1.37, 0, 0, 1, -0.22833334, 0, -1, -0.155, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
+[sub_resource type="Animation" id="Animation_k7xbv"]
+resource_name = "no-danger"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(19.62, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_i0prp"]
+resource_name = "oscillating-shadow"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/ShadowSprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3),
+"points": PackedFloat32Array(0.57658255, -0.25, 0, 0.25, 0, -0.577, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/ShadowSprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/ShadowSprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 3),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.33333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xtwv2"]
+_data = {
+&"RESET": SubResource("Animation_wcero"),
+&"danger-coming": SubResource("Animation_xtwv2"),
+&"flying-away": SubResource("Animation_3w2fa"),
+&"flying-in": SubResource("Animation_osa2p"),
+&"no-danger": SubResource("Animation_k7xbv"),
+&"oscillating-shadow": SubResource("Animation_i0prp")
+}
+
+[node name="Vulture" type="Node3D" unique_id=1329311615 groups=["vulture"]]
+script = ExtResource("1_cy26h")
+follow_height = 0.0
+follow_speed = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=868757010]
+visible = false
+mesh = SubResource("SphereMesh_cy26h")
+surface_material_override/0 = SubResource("StandardMaterial3D_wcero")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=383445621]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.42950702, 0)
+visible = false
+mesh = SubResource("QuadMesh_i0prp")
+surface_material_override/0 = SubResource("StandardMaterial3D_xtwv2")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1725840949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23684716, 0.57271665, -0.39507973)
+
+[node name="ShadowSprite3D" type="Sprite3D" parent="Node3D" unique_id=19518991]
+transform = Transform3D(0.265, 0, 0, 0, -1.1583517e-08, 0.265, 0, -0.265, -1.1583517e-08, 0.57658255, 0, 0)
+alpha_cut = 2
+texture = ExtResource("2_wcero")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772792835]
+libraries/ = SubResource("AnimationLibrary_xtwv2")
+autoplay = &"oscillating-shadow"

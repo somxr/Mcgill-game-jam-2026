@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://co04ojtran6lv"]
+
+[ext_resource type="Script" uid="uid://dtggc6ohm4cdx" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Script" uid="uid://o2ntbct0ail6" path="res://player/input.gd" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://biembwbuusjo7" path="res://player/idle.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://4ebjdjaacyn1" path="res://player/model.gd" id="3_qjkh3"]
+[ext_resource type="Script" uid="uid://cmc4vjs7wq721" path="res://player/dying.gd" id="6_boad6"]
+[ext_resource type="Script" uid="uid://n2no2mry584t" path="res://player/walk.gd" id="8_8t03j"]
+[ext_resource type="PackedScene" uid="uid://y3c3vfgh5bv6" path="res://assets/turtle/turtle placehold.fbx" id="10_8t03j"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g6k8r"]
+height = 0.093322754
+radius = 0.2685547
+
+[sub_resource type="Curve" id="Curve_8t03j"]
+_data = [Vector2(0, 0.4996845), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="Player" type="CharacterBody3D" unique_id=1006245938 groups=["player"]]
+script = ExtResource("1_g1dw6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1471168434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.046417236, 0)
+shape = SubResource("CylinderShape3D_g6k8r")
+
+[node name="Input" type="Node" parent="." unique_id=455691133]
+script = ExtResource("2_yw30f")
+
+[node name="Model" type="Node" parent="." unique_id=144402036]
+script = ExtResource("3_qjkh3")
+
+[node name="Idle" type="Node" parent="Model" unique_id=1883377157]
+script = ExtResource("3_g1dw6")
+
+[node name="Walk" type="Node" parent="Model" unique_id=651797239]
+script = ExtResource("8_8t03j")
+TOP_SPEED = 1.0
+SPEED_DURING_TURN = 0.8
+ACCELERATION = 0.5
+DECELERATION = 10.0
+angular_speed_curve = SubResource("Curve_8t03j")
+ANGULAR_SPEED = 1.5
+
+[node name="Dying" type="Node" parent="Model" unique_id=1649081999]
+script = ExtResource("6_boad6")
+metadata/_custom_type_script = "uid://dmi4fnrj0di4h"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=799311707]
+transform = Transform3D(1, 0, 0, 0, 0.89538574, 0.4452914, 0, -0.4452914, 0.89538574, 0, 0.37966368, 0.6869726)
+fov = 50.0
+size = 12.154
+
+[node name="visual" type="Node3D" parent="." unique_id=351229146]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="turtle placehold" parent="visual" unique_id=889482253 instance=ExtResource("10_8t03j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.031137973, 0)
+
+[node name="GroundRayCast3D" type="RayCast3D" parent="visual" unique_id=1798925328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.057276845, 0)
+target_position = Vector3(0, -0.525, 0)
