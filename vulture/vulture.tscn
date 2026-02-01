@@ -339,4 +339,4 @@ texture = ExtResource("2_wcero")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1772792835]
 libraries/ = SubResource("AnimationLibrary_xtwv2")
-autoplay = &"oscillating-shadow"
+autoplay = &"flying-in"

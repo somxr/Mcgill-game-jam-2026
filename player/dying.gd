@@ -1,4 +1,5 @@
 extends State
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../../AnimatedSprite2D"
 
 
 func _ready():
@@ -12,11 +13,16 @@ func check_transition(input : InputPackage):
 
 func update(input : InputPackage, delta : float):
 	player.velocity = Vector3.ZERO
+	if not animated_sprite_2d.is_playing():
+		animated_sprite_2d.visible = false
+		visual.visible = false
+		
 
-
-func on_enter_state():
-	print("entered die state")
+func enter_state():
 	player.velocity = Vector3.ZERO
+	animated_sprite_2d.visible = true
+	animated_sprite_2d.play("default")
+	
 
-func on_exit_state():
+func exit_state():
 	pass
