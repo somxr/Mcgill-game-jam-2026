@@ -22,7 +22,7 @@ var current_state : State
 }
 
 
-var is_safe: bool = false
+var is_safe: bool = true
 signal safety_changed(is_safe: bool)
 var is_dead: bool = false
 

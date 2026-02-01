@@ -10,7 +10,7 @@ var player_model: PlayerModel
 
 var kill_timer: float = 0.0 #The kill timer kills the player if it reaches zero.
 
-var is_player_safe: bool = false
+var is_player_safe: bool = true
 var killed_player: bool = false
 
 signal player_died
