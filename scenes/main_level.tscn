@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxxjpw5h7txcv" path="res://safe_zone/flip_flop.tscn" id="4_8ra5a"]
 [ext_resource type="PackedScene" uid="uid://ca2r2mjs2vrry" path="res://vulture/vulture.tscn" id="4_qmak7"]
 [ext_resource type="PackedScene" uid="uid://o6vc7l36evct" path="res://win_area/win_area.tscn" id="5_8ra5a"]
+[ext_resource type="Shader" uid="uid://ddod2t26mk10j" path="res://scenes/water0.gdshader" id="6_bq26l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ufxs0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +26,41 @@ uv1_scale = Vector3(0.92, 0.92, 0.92)
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bq26l"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bq26l"]
+size = Vector2(9.52, 7.97)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bq26l"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bq26l"]
+noise = SubResource("FastNoiseLite_bq26l")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u2c82"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k5pu3"]
+noise = SubResource("FastNoiseLite_u2c82")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5pu3"]
+render_priority = 0
+shader = ExtResource("6_bq26l")
+shader_parameter/time_speed = 1.0
+shader_parameter/surface_speed = 0.545
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.455
+shader_parameter/color_intensity = 0.035
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.495
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_k5pu3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_bq26l")
+shader_parameter/wave_height = 0.0
+shader_parameter/texture_height = 0.0
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
 
 [node name="MainLevel" type="Node3D" unique_id=572399830]
 
@@ -62,3 +98,8 @@ polygon = PackedVector2Array(0, 0, -0.9557605, -0.03782296, -0.08021438, 0.34286
 [node name="Vulture" parent="." unique_id=1329311615 instance=ExtResource("4_qmak7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5453548, 0, 0.95393455)
 follow_height = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=889903563]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.2672484, 0.025528729, -8.482295)
+mesh = SubResource("QuadMesh_bq26l")
+surface_material_override/0 = SubResource("ShaderMaterial_k5pu3")
