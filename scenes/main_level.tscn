@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://cxee86vqgv21t" path="res://scenes/safe_zones/conch.tscn" id="8_k5pu3"]
 [ext_resource type="Texture2D" uid="uid://dv2fult3ohdrx" path="res://assets/SandGround_0.png" id="9_iqu8w"]
 [ext_resource type="AudioStream" uid="uid://bla4ksscepns7" path="res://assets/AUDIO/Water Waves.mp3" id="10_5fr2l"]
+[ext_resource type="PackedScene" uid="uid://0lh25ak1xlwj" path="res://safe_zone/safe_zone.tscn" id="11_2sb77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ufxs0"]
-sky_top_color = Color(0.33784017, 0.4541784, 0.62275517, 1)
-sky_horizon_color = Color(0.5009953, 0.7114056, 0.7534091, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.21851867, 0.36539632, 0.6380665, 1)
+sky_horizon_color = Color(0.38094455, 0.7484052, 0.6558696, 1)
+ground_bottom_color = Color(0.3372549, 0.7490196, 0.7058824, 1)
+ground_horizon_color = Color(0.3372549, 0.7490196, 0.7058824, 1)
 
 [sub_resource type="Sky" id="Sky_6we3w"]
 sky_material = SubResource("ProceduralSkyMaterial_ufxs0")
@@ -112,6 +114,9 @@ shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
 shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
 shader_parameter/color4 = Color(0, 0.267, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkrx8"]
+size = Vector3(4.192093, 3.078125, 3.986847)
+
 [node name="MainLevel" type="Node3D" unique_id=572399830]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=796269454]
@@ -126,12 +131,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6162171, 0.05659175, 1.075
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1611264790]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 28.543312)
+visible = false
 use_collision = true
 size = Vector3(27.224854, 1, 25.166016)
 material = SubResource("StandardMaterial3D_6we3w")
 
 [node name="WinArea" parent="." unique_id=1031120400 instance=ExtResource("5_8ra5a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5845292, 0, -18.13499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5845292, 0, -18.687674)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WinArea" unique_id=1164651078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5361345, 0.38079834, -5.9560776)
@@ -144,8 +150,20 @@ follow_height = 0.5
 [node name="Clam" parent="." unique_id=446028002 instance=ExtResource("6_u2c82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3569374, -0.14029658, -12.17953)
 
+[node name="Clam3" parent="." unique_id=666283982 instance=ExtResource("6_u2c82")]
+transform = Transform3D(-0.9775117, 0, -0.21088126, 0, 1, 0, 0.21088126, 0, -0.9775117, -3.8268213, 0.2296747, -3.138526)
+
+[node name="Clam2" parent="." unique_id=137703807 instance=ExtResource("6_u2c82")]
+transform = Transform3D(-0.9848713, 0, -0.17328717, 0, 1, 0, 0.17328717, 0, -0.9848713, -9.6542225, -0.1421926, -13.132039)
+
 [node name="flipflop" parent="." unique_id=123533331 instance=ExtResource("7_u2c82")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6775968, 0.093930826, -5.8376384)
+
+[node name="flipflop2" parent="." unique_id=661654792 instance=ExtResource("7_u2c82")]
+transform = Transform3D(0.6979029, 0, 0.71619236, 0, 1, 0, -0.71619236, 0, 0.6979029, -7.9877768, 0.093930826, -4.8711057)
+
+[node name="flipflop3" parent="." unique_id=1931854097 instance=ExtResource("7_u2c82")]
+transform = Transform3D(0.9992118, 0, 0.03969592, 0, 1, 0, -0.03969592, 0, 0.9992118, -2.951501, -0.5020394, -12.412237)
 
 [node name="conch" parent="." unique_id=1686445705 instance=ExtResource("8_k5pu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50879896, 0.009048581, -0.9139705)
@@ -184,3 +202,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8471813, -18.730139)
 stream = ExtResource("10_5fr2l")
 autoplay = true
 bus = &"Water"
+
+[node name="SafeZone" parent="." unique_id=850130187 instance=ExtResource("11_2sb77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7825572, 0, 1.5141994)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SafeZone" unique_id=1859633624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5164261, 1.0390625, 1.6687163)
+shape = SubResource("BoxShape3D_fkrx8")

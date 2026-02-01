@@ -17,7 +17,8 @@ func _on_body_entered(body: Node3D):
 		body.get_node("Model").set_is_safe(true)
 		animation_player.play("screen_fade")
 		await animation_player.animation_finished
-		get_tree().change_scene_to_file("res://player/player.tscn")
+		
+		get_tree().change_scene_to_file("res://win_screen.tscn")
 
 func _on_body_exited(body: Node3D):
 	if body.is_in_group("player"):
