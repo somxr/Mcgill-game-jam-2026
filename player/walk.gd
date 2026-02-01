@@ -1,5 +1,6 @@
 extends State
 class_name Walk
+@onready var animation_player: AnimationPlayer = $"../../visual/turtlev3/AnimationPlayer"
 
 ## Top speed character moves forward
 @export var TOP_SPEED = 3.0 # meters per second
@@ -49,7 +50,7 @@ func update(input: InputPackage, delta: float):
 
 		
 func enter_state():
-	pass
+	animation_player.play("turtle-local/walk")
 func exit_state():
 	#is_gliding = false
 	pass

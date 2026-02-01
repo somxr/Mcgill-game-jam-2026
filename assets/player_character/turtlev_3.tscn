@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://borjg5bc81yg1"]
+
+[ext_resource type="PackedScene" uid="uid://cnowith0iqk5w" path="res://assets/claw_sequence/turtle/turtlev3.fbx" id="1_3wohu"]
+[ext_resource type="Animation" uid="uid://crt26xhrbun05" path="res://assets/turtle/walk.anim" id="2_ktrbi"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khyox"]
+_data = {
+&"walk": ExtResource("2_ktrbi")
+}
+
+[node name="turtlev3" unique_id=1849348940 instance=ExtResource("1_3wohu")]
+
+[node name="Skeleton3D" parent="turtle_Rig_0005_Turtle_Rig" parent_id_path=PackedInt32Array(1338572476) index="1" unique_id=865393518]
+bones/0/rotation = Quaternion(0.021836458, -0.12849998, -0.029017797, 0.99104434)
+bones/2/rotation = Quaternion(-0.045010205, -0.49504507, -0.08382869, 0.8636419)
+bones/3/rotation = Quaternion(-0.033841103, -0.1820892, 0.03496223, 0.98207736)
+bones/4/rotation = Quaternion(-0.0066883545, -0.4103725, -0.041065507, 0.91096836)
+bones/7/rotation = Quaternion(0.88755095, 2.82094e-17, 0.46070957, -5.4345035e-17)
+bones/8/rotation = Quaternion(-0.030730126, -0.19450273, 0.13489595, 0.9710961)
+bones/9/rotation = Quaternion(-0.042856097, -0.05304335, -0.14661783, 0.9868399)
+bones/10/rotation = Quaternion(0.023621527, -0.07959961, 0.0008418999, 0.99654675)
+bones/13/rotation = Quaternion(-6.428922e-12, 0.79434264, 6.4758012e-12, 0.60747004)
+bones/14/rotation = Quaternion(-0.052160386, 0.011709755, -0.00018392131, 0.99857014)
+bones/16/position = Vector3(0.028271582, 0.0054950947, 0.10316697)
+bones/16/rotation = Quaternion(-0.02656627, 0.29951325, 0.0247608, 0.9534008)
+bones/17/position = Vector3(0.08381533, 0.00072649407, 0.024104832)
+bones/17/rotation = Quaternion(-0.02369137, -0.2018753, 0.17141968, 0.9640023)
+bones/18/position = Vector3(0.049096446, -0.004993855, -0.0005337479)
+bones/18/rotation = Quaternion(0.15595014, 0.56998354, 0.06229639, 0.80431193)
+bones/21/rotation = Quaternion(0.96898466, -0.00037882722, -0.24710985, 0.0023256019)
+bones/22/position = Vector3(-0.04741304, 0.0044792835, -0.00029062974)
+bones/22/rotation = Quaternion(8.962912e-09, 0.23949161, -2.2801678e-09, 0.9708984)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1263310867]
+libraries/turtle-inherited = SubResource("AnimationLibrary_khyox")
